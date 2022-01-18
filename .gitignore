@@ -40,5 +40,4 @@ $RECYCLE.BIN/
 .env
 
 # json package
-sfdx-project.json
 project-scratch-def.json
