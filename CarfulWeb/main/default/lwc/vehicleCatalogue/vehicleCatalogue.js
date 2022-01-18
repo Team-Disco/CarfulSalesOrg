@@ -1,5 +1,5 @@
 import { LightningElement, api, track, wire } from 'lwc';
-import getVehicles from '@salesforce/apex/dataCatalogue.getVehicles';
+import getVehicles from '@salesforce/apex/catalogueData.getVehicles';
 
 
 export default class Catalogue extends LightningElement {
