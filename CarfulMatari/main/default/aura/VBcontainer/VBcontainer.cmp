@@ -1,4 +1,4 @@
-<aura:component controller="VBcontainerController" implements= "flexipage:availableForRecordHome,force:hasRecordId" access="global" ></aura:component>
+<aura:component controller="VBcontainerController" implements= "flexipage:availableForRecordHome,force:hasRecordId" access="global" >
 <aura:attribute name="RecordId" type="Id" />
 <aura:attribute name="Products" type="Product2" />
 <aura:attribute name="Columns" type="List" />
@@ -15,8 +15,8 @@
 
 </lightning:card>
 
-	
-</aura:component>
+</aura:component>	
+
 
 
 
