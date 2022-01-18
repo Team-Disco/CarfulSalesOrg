@@ -35,10 +35,10 @@
         },
         {
             "path": "CarfulWeb",
-            "default": false,
             "package": "CarfulWeb",
             "versionName": "ver 0.1",
             "versionNumber": "0.1.0.NEXT",
+            "default": false,
             "dependencies": [
                 {
                     "package": "CarfulMetaData",
@@ -68,6 +68,7 @@
         "CarfulNicholas@0.1.0-8": "04t5f000000JicuAAC",
         "CarfulNicholas@0.1.0-9": "04t5f000000JidTAAS",
         "CarfulNicholas@0.1.0-10": "04t5f000000JidYAAS",
-        "CarfulNicholas@0.1.0-11": "04t5f000000JiddAAC"
+        "CarfulNicholas@0.1.0-11": "04t5f000000JiddAAC",
+        "CarfulWeb@0.1.0-1": "04t5f000000JidsAAC"
     }
 }
