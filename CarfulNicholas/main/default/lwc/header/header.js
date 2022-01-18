@@ -3,23 +3,25 @@ import LOGO from '@salesforce/resourceUrl/caravanlogo';
 
 export default class Header extends LightningElement {
     logoUrl = LOGO;
-    tabList = [
-        {
-            tabName: 'Vehicle Catalogue',
-            tabLink: ''
-        },
-        {
-            tabName: 'Vehicle Builder',
-            tabLink: ''
-        },
-        {
-            tabName: 'About Carful',
-            tabLink: '/aboutcarful'
-        }
-    ]
 
     goToHomePage() {
-        console.log('hi');
-        window.location = window.location.origin;
+        this.sendEvent('Home');
+    }
+
+    goToCatalogue() {
+        this.sendEvent('Catalogue');
+    }
+
+    goToBuilder() {
+        this.sendEvent('Builder');
+    }
+
+    goToAbout() {
+        this.sendEvent('About');
+    }
+
+    sendEvent(tabValue) {
+        let myEvent = new CustomEvent('tabclicked', {detail: tabValue, bubbles: true, composed: true});
+        this.dispatchEvent(myEvent);
     }
 }

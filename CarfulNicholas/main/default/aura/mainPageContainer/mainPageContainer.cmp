@@ -2,20 +2,20 @@
     <aura:attribute name="curTab" type="String" access="Public"/>
 
     <div class="headerContainer">
-        <c:header></c:header>
+        <c:header ontabclicked={!c.handleTabClicked}></c:header>
     </div>
     <div class="bodyContainer">
-        <aura:if isTrue="{!v.curTab == home}">
+        <aura:if isTrue="{!v.curTab == Home}">
             
         </aura:if>
-        <aura:if isTrue="{v.curTab == builder}">
+        <aura:if isTrue="{v.curTab == Builder}">
+            <c:vehicleBuilderContainer></c:vehicleBuilderContainer>
+        </aura:if>
+        <aura:if isTrue="{v.curTab == About}">
 
         </aura:if>
-        <aura:if isTrue="{v.curTab == about}">
-
-        </aura:if>
-        <aura:if isTrue="{v.curTab == catalogue}">
-
+        <aura:if isTrue="{v.curTab == Catalogue}">
+            
         </aura:if>
     </div>
 </aura:component>	
