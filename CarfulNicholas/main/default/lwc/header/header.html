@@ -4,10 +4,8 @@
             <img src={logoUrl}>
             <h1 class=name>Carful</h1>
         </div>
-        <template for:each={tabList} for:item="tab">
-            <a key={tab.tabName} class='tabButton' href={tab.tabLink}>
-                {tab.tabName}
-            </a>
-        </template>
+        <a class='tabButton' onclick={goToCatalogue}>Vehicle Catalogue</a>
+        <a class='tabButton' onclick={goToBuilder}>Vehicle Builder</a>
+        <a class='tabButton' onclick={goToAbout}>About Carful</a>
     </div>
 </template>

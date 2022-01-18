@@ -1,21 +1,27 @@
 <aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
-    <aura:attribute name="curTab" type="String" access="Public"/>
+    <aura:attribute name="curTab" type="String" access="Public" default='Home'/>
 
     <div class="headerContainer">
-        <c:header></c:header>
+        <c:header ontabclicked="{!c.handleTabClicked}"></c:header>
     </div>
     <div class="bodyContainer">
-        <aura:if isTrue="{!v.curTab == home}">
-            
+        <aura:if isTrue="{!v.curTab == 'Home'}">
+            <c:carCarousel></c:carCarousel>
+            <c:whyCarful></c:whyCarful>
+            <c:associatedBrands></c:associatedBrands>
+            <!--social media-->
         </aura:if>
-        <aura:if isTrue="{v.curTab == builder}">
+        <aura:if isTrue="{!v.curTab == 'Builder'}">
+            <c:vehicleBuilderContainer></c:vehicleBuilderContainer>
+        </aura:if>
+        <aura:if isTrue="{!v.curTab == 'About'}">
 
         </aura:if>
-        <aura:if isTrue="{v.curTab == about}">
-
+        <aura:if isTrue="{!v.curTab == 'Catalogue'}">
+            <c:vehicleCatalogue></c:vehicleCatalogue>
         </aura:if>
-        <aura:if isTrue="{v.curTab == catalogue}">
-
-        </aura:if>
+    </div>
+    <div class='footerContainer'>
+        <c:carfulFooter></c:carfulFooter>
     </div>
 </aura:component>	

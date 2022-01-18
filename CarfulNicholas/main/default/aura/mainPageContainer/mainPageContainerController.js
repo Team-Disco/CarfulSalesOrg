@@ -1,5 +1,5 @@
 ({
-    myAction : function(component, event, helper) {
-
+    handleTabClicked : function(component, event, helper) {
+        helper.tabClicked(component, event);
     }
 })

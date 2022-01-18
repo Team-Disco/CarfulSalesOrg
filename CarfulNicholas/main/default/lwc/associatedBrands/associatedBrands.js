@@ -1,26 +1,26 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, track } from 'lwc';
+import DEFAULTBRAND from '@salesforce/resourceUrl/defaultBrandImg';
+import getData from '@salesforce/apex/getBrands.getData';
 
 export default class AssociatedBrands extends LightningElement {
-    /*
-    dynamically get url for images for brands by querying for
-    base static resource url and appending the brand name
-    */
+    @track
+    brands;
+    defaultImg = DEFAULTBRAND;
 
-    
+    constructor() {
+        super();
+        this.handleData();
 
-    passMap = {};
+    }
 
-    myList = {
-        Name: 'name',
-        Price__c: '100',
-        Make__c: 'make',
-        Model__c: 'model',
-        Year__c: 'year',
-        Customization_Catalogue_Entries__r: [
-            {
-                Name: 'name',
-                Customization__r
-            }
-        ]
+    handleData() {
+        getData()
+        .then(result => {
+            this.brands = result;
+            console.log(JSON.stringify(result));
+            console.log(result);
+        }).catch(error => {
+            console.log(error);
+        });
     }
 }

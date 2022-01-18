@@ -1,5 +1,5 @@
 <aura:component controller='vehicleBuilderContainerController' implements='forceCommunity:availableForAllPageTypes' access='global'>
     <aura:handler name="init" value="{!this}" action="{!c.Initialize}"/>
     <aura:attribute name='orgData' type='Object' access='global'/>
-    <c:vehicleCustomizer make-map='{v.orgData}'></c:vehicleCustomizer>
+    <c:vehicleCustomizer makeMap='{!v.orgData}'></c:vehicleCustomizer>
 </aura:component>
