@@ -1,20 +1,20 @@
-<aura:component implements='flexipage:availableForAllPageTypes' access='global'>
-    <aura:attribute name='curTab' type='String' access='Public'/>
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="curTab" type="String" access="Public"/>
 
-    <div class='headerContainer'>
+    <div class="headerContainer">
         <c:header></c:header>
     </div>
-    <div class='bodyContainer'>
-        <aura:if isTrue='{!v.curTab == home}'>
+    <div class="bodyContainer">
+        <aura:if isTrue="{!v.curTab == home}">
+            
+        </aura:if>
+        <aura:if isTrue="{v.curTab == builder}">
 
         </aura:if>
-        <aura:if isTrue='{v.curTab == builder}'>
+        <aura:if isTrue="{v.curTab == about}">
 
         </aura:if>
-        <aura:if isTrue='{v.curTab == about}'>
-
-        </aura:if>
-        <aura:if isTrue='{v.curTab == catalogue}'>
+        <aura:if isTrue="{v.curTab == catalogue}">
 
         </aura:if>
     </div>

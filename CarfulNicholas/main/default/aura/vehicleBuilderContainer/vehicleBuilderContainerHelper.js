@@ -1,8 +1,8 @@
 ({
-    helperMethod : function() {
+    helperMethod: function() {
 
     },
-    renderMethod : function(component) {
+    initMethod: function(component) {
         let data = c.getData();
         console.log(JSON.stringify(data));
     }

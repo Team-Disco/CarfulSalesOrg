@@ -19,6 +19,32 @@
             "versionName": "ver 0.1",
             "versionNumber": "0.1.0.NEXT",
             "default": false
+        },
+        {
+            "path": "CarfulMatari",
+            "package": "CarfulProject",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT",
+            "default": false,
+            "dependencies": [
+                {
+                  "package": "CarfulMetaData",
+                  "versionNumber": "0.1.0.2"
+                }
+            ]
+        },
+        {
+            "path": "CarfulWeb",
+            "default": false,
+            "package": "CarfulWeb",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT",
+            "dependencies": [
+              {
+                "package": "CarfulMetaData",
+                "versionNumber": "0.1.0.2"
+              }
+            ]
         }
     ],
     "name": "Carful Source Project",
@@ -28,11 +54,15 @@
     "packageAliases": {
         "CarfulNicholas": "0Ho5f000000PBIZCA4",
         "CarfulMetaData": "0Ho5f000000PBK6CAO",
+        "CarfulProject": "0Ho5f0000010wYSCAY",
+        "CarfulWeb": "0Ho5f000000PBJDCA4",
         "CarfulMetaData@0.1.0-1": "04t5f000000JibNAAS",
         "CarfulMetaData@0.1.0-2": "04t5f000000JibcAAC",
         "CarfulNicholas@0.1.0-1": "04t5f000000JibhAAC",
         "CarfulNicholas@0.1.0-2": "04t5f000000JibmAAC",
         "CarfulNicholas@0.1.0-3": "04t5f000000JicGAAS",
-        "CarfulNicholas@0.1.0-4": "04t5f000000JicLAAS"
+        "CarfulNicholas@0.1.0-4": "04t5f000000JicLAAS",
+        "CarfulNicholas@0.1.0-5": "04t5f000000JicQAAS",
+        "CarfulNicholas@0.1.0-6": "04t5f000000JicVAAS"
     }
 }

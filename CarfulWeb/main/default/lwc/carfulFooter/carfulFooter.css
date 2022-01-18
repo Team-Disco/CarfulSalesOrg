@@ -1,0 +1,13 @@
+.footer {
+background-color: #808080;
+display: flex;
+justify-content: flex-start;
+height: 48px;
+}
+.the_logo {
+font-size: 18px;
+margin-right: 24px;
+}
+.contact_link {
+font-size: 18px;
+}
