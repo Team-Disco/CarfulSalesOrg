@@ -1,7 +1,7 @@
 public class UpdateAccessory {
     //Apex class to add a default price when creating a new accessory
     
-public static void addAccessory(List <Accessory__c> newAccessory){
+public void addAccessory(List<Accessory__c> newAccessory){
     
     Set<ID> accessoryID = new Set<ID>();
     // Assign task created to a list to be updated outside of for loop. 
@@ -9,7 +9,7 @@ public static void addAccessory(List <Accessory__c> newAccessory){
      List<Accessory__c> access = new List<Accessory__c>();
     //iterate through trigger 
     for (Accessory__c acc : newAccessory) {
-        if(acc.Price__c =='null'){
+        if(acc.Price__c == null){
         accessoryID.add(acc.id);   
         acc.Price__c == '100';
         access.add(acc.Price__c);
@@ -20,7 +20,7 @@ public static void addAccessory(List <Accessory__c> newAccessory){
     t.Ownerid         = acc.Ownerid;
     t.subject 	  = 'Price update to 100';
     t.Status	  = 'In Progress';
-    t.Description     = 'New Description Task created by Trigger';
+    t.Description = 'New Description Task created by Trigger';
     t.ActivityDate = date.today() + 3;
     ta.add(t) ;
         }
