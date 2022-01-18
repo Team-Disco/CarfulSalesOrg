@@ -21,7 +21,7 @@ export default class Header extends LightningElement {
     }
 
     sendEvent(tabValue) {
-        let myEvent = new CustomEvent('tabclicked', {detail: tabValue, bubbles: true, composed: true});
+        let myEvent = new CustomEvent('tabclicked', {detail: {eValue: tabValue}, bubbles: true, composed: true});
         this.dispatchEvent(myEvent);
     }
 }

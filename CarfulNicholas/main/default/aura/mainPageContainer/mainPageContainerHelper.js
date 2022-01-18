@@ -1,5 +1,5 @@
 ({
     tabClicked : function(component, event) {
-        component.set('v.curTab', event.getParam('detail'));
+        component.set('v.curTab', event.getParam('eValue'));
     }
 })

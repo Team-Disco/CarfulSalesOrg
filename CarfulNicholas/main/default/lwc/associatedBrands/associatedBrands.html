@@ -1,8 +1,14 @@
 <template>
     <h1>Brands who have made Carful their home: </h1>
     <div class='brandNodeContainer'>
-        <template for:each={brandList} for:item="brand">
-            
+        <template if:true={brands}>
+            <template for:each={brands} for:item="brand">
+                <div key={brand}>
+                    <img src={defaultImg}>
+                    <p>{brand.Name}</p>
+                </div>
+            </template>
         </template>
+        
     </div>
 </template>
