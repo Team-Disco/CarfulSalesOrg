@@ -9,6 +9,9 @@ public with sharing class vehicleBuilderContainerController {
         (SELECT Name, Accessory__r.Price__c, Accessory__r.Name, Accessory__r.Id FROM Accessory_Catalogue_Entries__r)
         FROM Product2]; 
 
+
+        //TESTING
+
         //make root of tree
         Map<String, Map<String, Map<String, Map<String, Map<String, Map<String, String>>>>>> returnMap = new Map<String, Map<String, Map<String, Map<String, Map<String, Map<String, String>>>>>>();
 

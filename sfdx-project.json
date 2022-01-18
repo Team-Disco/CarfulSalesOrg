@@ -28,8 +28,8 @@
             "default": false,
             "dependencies": [
                 {
-                  "package": "CarfulMetaData",
-                  "versionNumber": "0.1.0.2"
+                    "package": "CarfulMetaData",
+                    "versionNumber": "0.1.0.2"
                 }
             ]
         },
@@ -40,10 +40,10 @@
             "versionName": "ver 0.1",
             "versionNumber": "0.1.0.NEXT",
             "dependencies": [
-              {
-                "package": "CarfulMetaData",
-                "versionNumber": "0.1.0.2"
-              }
+                {
+                    "package": "CarfulMetaData",
+                    "versionNumber": "0.1.0.2"
+                }
             ]
         }
     ],
@@ -63,6 +63,11 @@
         "CarfulNicholas@0.1.0-3": "04t5f000000JicGAAS",
         "CarfulNicholas@0.1.0-4": "04t5f000000JicLAAS",
         "CarfulNicholas@0.1.0-5": "04t5f000000JicQAAS",
-        "CarfulNicholas@0.1.0-6": "04t5f000000JicVAAS"
+        "CarfulNicholas@0.1.0-6": "04t5f000000JicVAAS",
+        "CarfulNicholas@0.1.0-7": "04t5f000000JicpAAC",
+        "CarfulNicholas@0.1.0-8": "04t5f000000JicuAAC",
+        "CarfulNicholas@0.1.0-9": "04t5f000000JidTAAS",
+        "CarfulNicholas@0.1.0-10": "04t5f000000JidYAAS",
+        "CarfulNicholas@0.1.0-11": "04t5f000000JiddAAC"
     }
 }

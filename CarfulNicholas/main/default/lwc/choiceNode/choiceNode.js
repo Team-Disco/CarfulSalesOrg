@@ -17,7 +17,6 @@ export default class ChoiceNode extends LightningElement {
             this.template.querySelector('.container').classList.add('selected');
         } else {
             this.template.querySelector('.container').classList.remove('selected');
-            console.log('hai');
         }
     }
 
