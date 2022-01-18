@@ -1,8 +1,5 @@
 ({
-    myAction : function(component, event, helper) {
-
-    },
-    onRender : function(component, event, helper) {
-        helper.renderMethod(component);
+    Initialize: function(component, event, helper) {
+        helper.initMethod(component);
     }
 })

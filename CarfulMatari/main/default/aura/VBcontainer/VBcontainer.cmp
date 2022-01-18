@@ -1,0 +1,37 @@
+<aura:component controller="VBcontainerController" implements= "flexipage:availableForRecordHome,force:hasRecordId" access="global" ></aura:component>
+<aura:attribute name="RecordId" type="Id" />
+<aura:attribute name="Products" type="Product2" />
+<aura:attribute name="Columns" type="List" />
+<aura:handler name="init" value="{!this}" action="{!c.myAction}" />
+
+<force:recordData aura:id="makeRecord"
+                  recordId="{!v.recordId}"
+                  targetFields="{!v.Products}"
+                  layoutType="FULL"
+                  />
+<lightning:card iconName="standard:make" title="{! 'Vehicle List for ' + v.Products.Vehicle_Make__c + v.Products.Id}">
+    <!-- Vehicle list goes here -->
+    <lightning:datatable data="{! v.products }" columns="{! v.Columns }" keyField="Id" hideCheckboxColumn="true"/>
+
+</lightning:card>
+
+	
+</aura:component>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
