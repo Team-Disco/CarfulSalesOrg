@@ -40,4 +40,8 @@ $RECYCLE.BIN/
 .env
 
 # json package
+<<<<<<< HEAD
 project-scratch-def.json
+=======
+project-scratch-def.json
+>>>>>>> 00454536cc9763e9248a2688c83861549508e495
