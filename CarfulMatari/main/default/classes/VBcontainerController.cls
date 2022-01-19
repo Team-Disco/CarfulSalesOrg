@@ -3,7 +3,7 @@ public with sharing class VBcontainerController {
     public static List<Product2>getMake(){
     List<Product2> myList = [SELECT Name, Price__c, Vehicle_Make__c, Vehicle_Model__c, Year__c,
     (SELECT Name, Customization__r.Price__c, Customization__r.Name, Customization__r.Id FROM Customization_Catalogue_Entries__r),
-    (SELECT Name, Color__r.Price__c, Color__r.Name, Color__r.Id FROM Paint_Color_Catalogue_Entries__r),
+    (SELECT Name, Paint_Color__r.Price__c, Paint_Color__r.Name, Paint_Color__r.Id FROM Paint_Color_Catalogue_Entries__r),
     (SELECT Name, Accessory__r.Price__c, Accessory__r.Name, Accessory__r.Id FROM Accessory_Catalogue_Entries__r)
     FROM Product2]; 
  
@@ -34,7 +34,7 @@ public with sharing class VBcontainerController {
  
         Map<String, Map<String, String>> colorInfo = new Map<String, Map<String, String>>();
         
-        for (Color_Catalogue_Entry__c colorCatEntry : curProduct.Color_Catalogue_Entries__r) {
+        for (Paint_Color_Catalogue_Entry__c colorCatEntry : curProduct.Paint_Color_Catalogue_Entries__r) {
             colorInfo.put(colorCatEntry.Color__r.Name, new Map<String, String>());
  
             colorInfo.get(colorCatEntry.Color__r.Name).put('Price', colorCatEntry.Color__r.Price__c);
