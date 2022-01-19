@@ -11,14 +11,14 @@ public void addAccessory(List<Accessory__c> newAccessory){
     for (Accessory__c acc : newAccessory) {
         if(acc.Price__c == null){
         accessoryID.add(acc.id);   
-        acc.Price__c == '100';
-        access.add(acc.Price__c);
+        acc.Price__c = 100;
+        //access.add(acc.Price__c);
         //Create a new task and assign it the variable t
     Task t = new Task();
     // Assign Values to the task t
     t.WhatID          = acc.Id;
     t.Ownerid         = acc.Ownerid;
-    t.subject 	  = 'Price update to 100';
+    t.subject 	  = 'Price defaults to 100';
     t.Status	  = 'In Progress';
     t.Description = 'New Description Task created by Trigger';
     t.ActivityDate = date.today() + 3;
