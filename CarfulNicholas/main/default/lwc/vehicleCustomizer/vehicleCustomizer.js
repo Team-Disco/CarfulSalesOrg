@@ -8,8 +8,13 @@ export default class VehicleCustomizer extends LightningElement {
     //TESTING
 
     logRawData() {
-        console.log(this.rawVehicleData);
         console.log(JSON.stringify(this.rawVehicleData));
+
+        let setObj = {};
+
+        this.rawVehicleData.forEach(function (obj) {
+            
+        });
     }
 
     //TESTING END
