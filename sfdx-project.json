@@ -18,6 +18,10 @@
                 {
                     "package": "CarfulApp",
                     "versionNumber": "0.1.0.LATEST"
+                },
+                {
+                    "package": "CarfulNicholasVB",
+                    "versionNumber": "0.1.0.LATEST"
                 }
             ]
         },
@@ -66,8 +70,21 @@
                     "versionNumber": "0.1.0.2"
                 },
                 {
-                    "package": "CarfulNicholas",
+                    "package": "CarfulNicholasVB",
                     "versionNumber": "0.1.0.LATEST"
+                }
+            ]
+        },
+        {
+            "path": "CarfulNicholasVB",
+            "package": "CarfulNicholasVB",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT",
+            "default": false,
+            "dependencies": [
+                {
+                    "package": "CarfulMetaData",
+                    "versionNumber": "0.1.0.2"
                 }
             ]
         }
@@ -165,6 +182,15 @@
         "CarfulNicholas@0.1.0-63": "04t5f000000JikKAAS",
         "CarfulNicholas@0.1.0-64": "04t5f000000JikPAAS",
         "CarfulNicholas@0.1.0-65": "04t5f000000JikUAAS",
-        "CarfulNicholas@0.1.0-66": "04t5f000000JikeAAC"
+        "CarfulNicholas@0.1.0-66": "04t5f000000JikeAAC",
+        "CarfulNicholasVB": "0Ho5f000000PBKLCA4",
+        "CarfulNicholasVB@0.1.0-1": "04t5f000000JikjAAC",
+        "CarfulNicholasVB@0.1.0-2": "04t5f000000JikoAAC",
+        "CarfulApp@0.1.0-9": "04t5f000000JiktAAC",
+        "CarfulApp@0.1.0-10": "04t5f000000JikyAAC",
+        "CarfulApp@0.1.0-11": "04t5f000000Jil3AAC",
+        "CarfulNicholas@0.1.0-67": "04t5f000000Jil8AAC",
+        "CarfulNicholas@0.1.0-68": "04t5f000000JilDAAS",
+        "CarfulNicholas@0.1.0-69": "04t5f000000JilIAAS"
     }
 }
