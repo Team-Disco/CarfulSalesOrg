@@ -2,6 +2,67 @@ import { api, LightningElement, track } from 'lwc';
 import HYUNDAIELANTRA from '@salesforce/resourceUrl/hyundaiElantra';
 
 export default class VehicleCustomizer extends LightningElement {
+    @api
+    rawVehicleData;
+
+    //TESTING
+
+    logRawData() {
+        console.log(JSON.stringify(this.rawVehicleData));
+
+        let setObj = {};
+
+        this.rawVehicleData.forEach(function (obj) {
+            
+            if (setObj[obj.Vehicle_Make__c] == null) {
+                setObj[obj.Vehicle_Make__c] = {};
+            }
+
+            if (setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c] == null) {
+                setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c] = {};
+            }
+
+            setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c] = {};
+            setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Accessories'] = {};
+            setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Colors'] = {};
+            setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Customizations'] = {};
+
+            if (obj.Paint_Color_Catalogue_Entries__r != null) {
+                obj.Paint_Color_Catalogue_Entries__r.forEach(function (nestedObj) {
+                    setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Colors'][nestedObj.Paint_Color__r.Name] = {};
+                    setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Colors'][nestedObj.Paint_Color__r.Name]['Price'] = nestedObj.Paint_Color__r.Price__c;
+                    setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Colors'][nestedObj.Paint_Color__r.Name]['Name'] = nestedObj.Paint_Color__r.Name;
+                    setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Colors'][nestedObj.Paint_Color__r.Name]['Id'] = nestedObj.Paint_Color__r.Id;
+                    setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Colors'][nestedObj.Paint_Color__r.Name]['Selected'] = false;
+                });
+            }
+
+            if (obj.Accessory_Catalogue_Entries__r != null) {
+                obj.Accessory_Catalogue_Entries__r.forEach(function (nestedObj) {
+                    setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Accessories'][nestedObj.Accessory__r.Name] = {};
+                    setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Accessories'][nestedObj.Accessory__r.Name]['Price'] = nestedObj.Accessory__r.Price__c;
+                    setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Accessories'][nestedObj.Accessory__r.Name]['Name'] = nestedObj.Accessory__r.Name;
+                    setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Accessories'][nestedObj.Accessory__r.Name]['Id'] = nestedObj.Accessory__r.Id;
+                    setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Accessories'][nestedObj.Accessory__r.Name]['Selected'] = false;
+                });
+            }
+
+            if (obj.Customization_Catalogue_Entries__r != null) {
+                obj.Customization_Catalogue_Entries__r.forEach(function (nestedObj) {
+                    setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Customizations'][nestedObj.Customization__r.Name] = {};
+                    setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Customizations'][nestedObj.Customization__r.Name]['Price'] = nestedObj.Customization__r.Price__c;
+                    setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Customizations'][nestedObj.Customization__r.Name]['Name'] = nestedObj.Customization__r.Name;
+                    setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Customizations'][nestedObj.Customization__r.Name]['Id'] = nestedObj.Customization__r.Id;
+                    setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Customizations'][nestedObj.Customization__r.Name]['Selected'] = false;
+                });
+            }
+
+        });
+
+        this.makeMap = setObj;
+    }
+
+    //TESTING END
 
     vehicleImgUrl = HYUNDAIELANTRA;
 
@@ -181,6 +242,10 @@ export default class VehicleCustomizer extends LightningElement {
         this.alertCheck();
         //TODO either make sure that a color is selected or set a default color
         //TODO send info to another component
+
+        //TESTING
+        this.logRawData();
+        //TESTING END
     }
 
     //event handler when an option node is clicked

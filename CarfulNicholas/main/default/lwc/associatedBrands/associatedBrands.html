@@ -3,7 +3,7 @@
     <div class='brandNodeContainer'>
         <template if:true={brands}>
             <template for:each={brands} for:item="brand">
-                <div key={brand}>
+                <div key={brand} class='brandNode'>
                     <img src={defaultImg}>
                     <p>{brand.Name}</p>
                 </div>

@@ -9,11 +9,15 @@
             "dependencies": [
                 {
                     "package": "CarfulMetaData",
-                    "versionNumber": "0.1.0.2"
+                    "versionNumber": "0.1.0.LATEST"
                 },
                 {
                     "package": "CarfulWeb",
-                    "versionNumber": "0.1.0.3"
+                    "versionNumber": "0.1.0.LATEST"
+                },
+                {
+                    "package": "CarfulApp",
+                    "versionNumber": "0.1.0.LATEST"
                 }
             ]
         },
@@ -55,7 +59,17 @@
             "package": "CarfulApp",
             "versionName": "ver 0.1",
             "versionNumber": "0.1.0.NEXT",
-            "default": true
+            "default": true,
+            "dependencies": [
+                {
+                    "package": "CarfulMetaData",
+                    "versionNumber": "0.1.0.2"
+                },
+                {
+                    "package": "CarfulNicholas",
+                    "versionNumber": "0.1.0.LATEST"
+                }
+            ]
         }
     ],
     "name": "Carful Source Project",
@@ -97,11 +111,22 @@
         "CarfulNicholas@0.1.0-23": "04t5f000000JifjAAC",
         "CarfulWeb@0.1.0-4": "04t5f000000JifPAAS",
         "CarfulWeb@0.1.0-5": "04t5f000000JifZAAS",
+        "CarfulNicholas@0.1.0-24": "04t5f000000JifoAAC",
+        "CarfulNicholas@0.1.0-25": "04t5f000000JiftAAC",
+        "CarfulNicholas@0.1.0-26": "04t5f000000JifyAAC",
         "CarfulApp": "0Ho5f000000PBKBCA4",
         "CarfulApp@0.1.0-1": "04t5f000000Jig3AAC",
+        "CarfulNicholas@0.1.0-27": "04t5f000000Jig8AAC",
+        "CarfulNicholas@0.1.0-28": "04t5f000000JigDAAS",
+        "CarfulNicholas@0.1.0-29": "04t5f000000JigIAAS",
+        "CarfulNicholas@0.1.0-30": "04t5f000000JigNAAS",
         "CarfulApp@0.1.0-2": "04t5f000000JigSAAS",
+        "CarfulNicholas@0.1.0-31": "04t5f000000JigXAAS",
+        "CarfulNicholas@0.1.0-32": "04t5f000000JigcAAC",
         "CarfulApp@0.1.0-3": "04t5f000000JighAAC",
         "CarfulApp@0.1.0-4": "04t5f000000JigmAAC",
-        "CarfulApp@0.1.0-5": "04t5f000000JigwAAC"
+        "CarfulNicholas@0.1.0-33": "04t5f000000JigrAAC",
+        "CarfulApp@0.1.0-5": "04t5f000000JigwAAC",
+        "CarfulApp@0.1.0-6": "04t5f000000Jih6AAC"
     }
 }

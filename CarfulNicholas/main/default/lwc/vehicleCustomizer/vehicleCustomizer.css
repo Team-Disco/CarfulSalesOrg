@@ -59,6 +59,7 @@ c-choice-node {
 .choicesBottomBar {
     background: rgb(121,121,121);
     background: linear-gradient(0deg, rgba(121,121,121,1) 0%, rgba(255,255,255,1) 73%, rgba(121,121,121,1) 100%);
+    min-height: 221.5px;
 }
 
 .makeSelect, .modelSelect, .yearSelect {
