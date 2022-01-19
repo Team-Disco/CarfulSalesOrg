@@ -6,6 +6,10 @@ export default class VehicleCustomizer extends LightningElement {
     rawVehicleData;
 
     //TESTING
+    constructor() {
+        super();
+        this.logRawData();
+    }
 
     logRawData() {
         console.log(JSON.stringify(this.rawVehicleData));
@@ -26,6 +30,7 @@ export default class VehicleCustomizer extends LightningElement {
             setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Accessories'] = {};
             setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Colors'] = {};
             setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Customizations'] = {};
+            setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Price'] = obj.Price__c;
 
             if (obj.Paint_Color_Catalogue_Entries__r != null) {
                 obj.Paint_Color_Catalogue_Entries__r.forEach(function (nestedObj) {
@@ -242,10 +247,6 @@ export default class VehicleCustomizer extends LightningElement {
         this.alertCheck();
         //TODO either make sure that a color is selected or set a default color
         //TODO send info to another component
-
-        //TESTING
-        this.logRawData();
-        //TESTING END
     }
 
     //event handler when an option node is clicked
