@@ -1,3 +1,7 @@
 .brandNodeContainer {
     display: flex;
 }
+
+.brandNode {
+    margin: 10px;
+}

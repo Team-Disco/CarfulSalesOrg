@@ -1,14 +1,13 @@
 ({
 	myAction : function(component, event, helper) {
         
-	var action = component.get("c.getMake");
-    action.setParams({
-    recordId: component.get("v.recordId")
-});
-    action.setCallback(this, function(data) {
-    component.set("v.Make", data.getReturnValue());
-});
-    $A.enqueueAction(action);
+        var action = component.get('c.getMake');
+        action.setCallback(this, function (response) {
+            if (response.getState() == 'SUCCESS') {
+                component.set('v.orgData', response.getReturnValue());
+            }
+        });
+        $A.enqueueAction(action);
 
 	}
 })
