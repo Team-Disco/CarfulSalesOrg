@@ -2,6 +2,17 @@ import { api, LightningElement, track } from 'lwc';
 import HYUNDAIELANTRA from '@salesforce/resourceUrl/hyundaiElantra';
 
 export default class VehicleCustomizer extends LightningElement {
+    @api
+    rawVehicleData;
+
+    //TESTING
+
+    logRawData() {
+        console.log(this.rawVehicleData);
+        console.log(JSON.stringify(this.rawVehicleData));
+    }
+
+    //TESTING END
 
     vehicleImgUrl = HYUNDAIELANTRA;
 
@@ -181,6 +192,10 @@ export default class VehicleCustomizer extends LightningElement {
         this.alertCheck();
         //TODO either make sure that a color is selected or set a default color
         //TODO send info to another component
+
+        //TESTING
+        this.logRawData();
+        //TESTING END
     }
 
     //event handler when an option node is clicked

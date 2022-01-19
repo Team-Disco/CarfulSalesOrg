@@ -1,8 +1,15 @@
-public with sharing class vehicleBuilderContainerController {
+public without sharing class vehicleBuilderContainerController {
 
     @AuraEnabled
-    public static Map<String, Map<String, Map<String, Map<String, Map<String, Map<String, String>>>>>> getData(){
+    public static List<Product2> getData(){
         try {
+        return [SELECT Name, Price__c, Vehicle_Make__c, Vehicle_Model__c, Year__c,
+        (SELECT Name, Customization__r.Price__c, Customization__r.Name, Customization__r.Id FROM Customization_Catalogue_Entries__r),
+        (SELECT Name, Paint_Color__r.Price__c, Paint_Color__r.Name, Paint_Color__r.Id FROM Paint_Color_Catalogue_Entries__r),
+        (SELECT Name, Accessory__r.Price__c, Accessory__r.Name, Accessory__r.Id FROM Accessory_Catalogue_Entries__r)
+        FROM Product2]; 
+
+
             List<Product2> myList = [SELECT Name, Price__c, Vehicle_Make__c, Vehicle_Model__c, Year__c,
         (SELECT Name, Customization__r.Price__c, Customization__r.Name, Customization__r.Id FROM Customization_Catalogue_Entries__r),
         (SELECT Name, Paint_Color__r.Price__c, Paint_Color__r.Name, Paint_Color__r.Id FROM Paint_Color_Catalogue_Entries__r),
@@ -11,8 +18,10 @@ public with sharing class vehicleBuilderContainerController {
 
 
         //TESTING
-
+        return myList;
+        //END TESTING
         //make root of tree
+        /*
         Map<String, Map<String, Map<String, Map<String, Map<String, Map<String, String>>>>>> returnMap = new Map<String, Map<String, Map<String, Map<String, Map<String, Map<String, String>>>>>>();
 
         //make tree
@@ -68,6 +77,7 @@ public with sharing class vehicleBuilderContainerController {
         }
 
         return returnMap;
+        */
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
