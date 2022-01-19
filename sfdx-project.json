@@ -29,7 +29,7 @@
             "package": "CarfulProject",
             "versionName": "ver 0.1",
             "versionNumber": "0.1.0.NEXT",
-            "default": true,
+            "default": false,
             "dependencies": [
                 {
                     "package": "CarfulMetaData",
@@ -49,6 +49,13 @@
                     "versionNumber": "0.1.0.2"
                 }
             ]
+        },
+        {
+            "path": "CarfulMatari",
+            "package": "CarfulApp",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT",
+            "default": true
         }
     ],
     "name": "Carful Source Project",
@@ -89,6 +96,8 @@
         "CarfulNicholas@0.1.0-22": "04t5f000000JifeAAC",
         "CarfulNicholas@0.1.0-23": "04t5f000000JifjAAC",
         "CarfulWeb@0.1.0-4": "04t5f000000JifPAAS",
-        "CarfulWeb@0.1.0-5": "04t5f000000JifZAAS"
+        "CarfulWeb@0.1.0-5": "04t5f000000JifZAAS",
+        "CarfulApp": "0Ho5f000000PBKBCA4",
+        "CarfulApp@0.1.0-1": "04t5f000000Jig3AAC"
     }
 }
