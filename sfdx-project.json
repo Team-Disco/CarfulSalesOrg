@@ -9,11 +9,15 @@
             "dependencies": [
                 {
                     "package": "CarfulMetaData",
-                    "versionNumber": "0.1.0.2"
+                    "versionNumber": "0.1.0.LATEST"
                 },
                 {
                     "package": "CarfulWeb",
-                    "versionNumber": "0.1.0.3"
+                    "versionNumber": "0.1.0.LATEST"
+                },
+                {
+                    "package": "CarfulApp",
+                    "versionNumber": "0.1.0.LATEST"
                 }
             ]
         },
@@ -55,7 +59,17 @@
             "package": "CarfulApp",
             "versionName": "ver 0.1",
             "versionNumber": "0.1.0.NEXT",
-            "default": true
+            "default": true,
+            "dependencies": [
+                {
+                    "package": "CarfulMetaData",
+                    "versionNumber": "0.1.0.2"
+                },
+                {
+                    "package": "CarfulNicholas",
+                    "versionNumber": "0.1.0.LATEST"
+                }
+            ]
         }
     ],
     "name": "Carful Source Project",
@@ -111,6 +125,8 @@
         "CarfulNicholas@0.1.0-32": "04t5f000000JigcAAC",
         "CarfulApp@0.1.0-3": "04t5f000000JighAAC",
         "CarfulApp@0.1.0-4": "04t5f000000JigmAAC",
-        "CarfulNicholas@0.1.0-33": "04t5f000000JigrAAC"
+        "CarfulNicholas@0.1.0-33": "04t5f000000JigrAAC",
+        "CarfulApp@0.1.0-5": "04t5f000000JigwAAC",
+        "CarfulApp@0.1.0-6": "04t5f000000Jih6AAC"
     }
 }

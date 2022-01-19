@@ -5,22 +5,3 @@
 <c:vehicleCustomizer rawVehicleData='{!v.orgData}'></c:vehicleCustomizer>
 
 </aura:component>	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
