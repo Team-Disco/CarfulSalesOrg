@@ -9,19 +9,24 @@
             <c:carCarousel></c:carCarousel>
             <c:whyCarful></c:whyCarful>
             <c:associatedBrands></c:associatedBrands>
-            <!--social media-->
         </aura:if>
         <aura:if isTrue="{!v.curTab == 'Builder'}">
             <c:vehicleBuilderContainer></c:vehicleBuilderContainer>
         </aura:if>
         <aura:if isTrue="{!v.curTab == 'About'}">
-
+            <c:aboutCarful></c:aboutCarful>
         </aura:if>
         <aura:if isTrue="{!v.curTab == 'Catalogue'}">
             <c:vehicleCatalogue></c:vehicleCatalogue>
+            <c:data></c:data>
+            <c:detail></c:detail>
+            <c:list></c:list>
+            <c:selector></c:selector>
+            <c:tile></c:tile>
         </aura:if>
     </div>
     <div class='footerContainer'>
+        <c:socialMediaLinks></c:socialMediaLinks>
         <c:carfulFooter></c:carfulFooter>
     </div>
 </aura:component>	

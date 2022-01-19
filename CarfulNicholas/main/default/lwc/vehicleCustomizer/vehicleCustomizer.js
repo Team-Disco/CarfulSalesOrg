@@ -5,14 +5,7 @@ export default class VehicleCustomizer extends LightningElement {
     @api
     rawVehicleData;
 
-    //TESTING
-    constructor() {
-        super();
-        this.logRawData();
-    }
-
     logRawData() {
-        console.log(JSON.stringify(this.rawVehicleData));
 
         let setObj = {};
 
@@ -67,8 +60,6 @@ export default class VehicleCustomizer extends LightningElement {
         this.makeMap = setObj;
     }
 
-    //TESTING END
-
     vehicleImgUrl = HYUNDAIELANTRA;
 
     //template render variables
@@ -118,6 +109,7 @@ export default class VehicleCustomizer extends LightningElement {
 
     //method to retrieve the list of all available makes
     get makeList() {
+        this.logRawData();
         return Object.getOwnPropertyNames(this.makeMap);
     }
 

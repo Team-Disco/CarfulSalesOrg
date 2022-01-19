@@ -1,5 +1,23 @@
+p {
+    text-align: center;
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+}
+
 .brandNodeContainer {
     display: flex;
+}
+
+.mainContainer {
+    background-color: #CECECE;
 }
 
 .brandNode {

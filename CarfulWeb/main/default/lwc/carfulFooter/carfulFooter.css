@@ -1,5 +1,8 @@
+div {
+    color: white;
+}
 .footer {
-background-color: #808080;
+background-color: #404040;
 display: flex;
 justify-content: flex-start;
 height: 48px;
