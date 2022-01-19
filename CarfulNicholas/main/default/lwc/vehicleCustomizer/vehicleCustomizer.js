@@ -1,9 +1,14 @@
 import { api, LightningElement, track } from 'lwc';
 import HYUNDAIELANTRA from '@salesforce/resourceUrl/hyundaiElantra';
+import submitOrder from '@salesforce/apex/submitOrderItem.submitOrder';
 
 export default class VehicleCustomizer extends LightningElement {
     @api
     rawVehicleData;
+
+    connectedCallback() {
+        this.logRawData();
+    }
 
     logRawData() {
 
@@ -24,13 +29,14 @@ export default class VehicleCustomizer extends LightningElement {
             setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Colors'] = {};
             setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Customizations'] = {};
             setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Price'] = obj.Price__c;
+            setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Id'] = obj.Id;
 
             if (obj.Paint_Color_Catalogue_Entries__r != null) {
                 obj.Paint_Color_Catalogue_Entries__r.forEach(function (nestedObj) {
                     setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Colors'][nestedObj.Paint_Color__r.Name] = {};
                     setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Colors'][nestedObj.Paint_Color__r.Name]['Price'] = nestedObj.Paint_Color__r.Price__c;
                     setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Colors'][nestedObj.Paint_Color__r.Name]['Name'] = nestedObj.Paint_Color__r.Name;
-                    setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Colors'][nestedObj.Paint_Color__r.Name]['Id'] = nestedObj.Paint_Color__r.Id;
+                    setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Colors'][nestedObj.Paint_Color__r.Name]['RecordId'] = nestedObj.Paint_Color__r.Id;
                     setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Colors'][nestedObj.Paint_Color__r.Name]['Selected'] = false;
                 });
             }
@@ -40,7 +46,7 @@ export default class VehicleCustomizer extends LightningElement {
                     setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Accessories'][nestedObj.Accessory__r.Name] = {};
                     setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Accessories'][nestedObj.Accessory__r.Name]['Price'] = nestedObj.Accessory__r.Price__c;
                     setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Accessories'][nestedObj.Accessory__r.Name]['Name'] = nestedObj.Accessory__r.Name;
-                    setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Accessories'][nestedObj.Accessory__r.Name]['Id'] = nestedObj.Accessory__r.Id;
+                    setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Accessories'][nestedObj.Accessory__r.Name]['RecordId'] = nestedObj.Accessory__r.Id;
                     setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Accessories'][nestedObj.Accessory__r.Name]['Selected'] = false;
                 });
             }
@@ -50,7 +56,7 @@ export default class VehicleCustomizer extends LightningElement {
                     setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Customizations'][nestedObj.Customization__r.Name] = {};
                     setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Customizations'][nestedObj.Customization__r.Name]['Price'] = nestedObj.Customization__r.Price__c;
                     setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Customizations'][nestedObj.Customization__r.Name]['Name'] = nestedObj.Customization__r.Name;
-                    setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Customizations'][nestedObj.Customization__r.Name]['Id'] = nestedObj.Customization__r.Id;
+                    setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Customizations'][nestedObj.Customization__r.Name]['RecordId'] = nestedObj.Customization__r.Id;
                     setObj[obj.Vehicle_Make__c][obj.Vehicle_Model__c][obj.Year__c]['Customizations'][nestedObj.Customization__r.Name]['Selected'] = false;
                 });
             }
@@ -68,6 +74,7 @@ export default class VehicleCustomizer extends LightningElement {
     isYearSelected = false;
     isOptionBarVisible = false;
     showAlert = false;
+    showSuccessAlert = false;
 
     //dictates what options list to show
     optionBarState = '';
@@ -109,7 +116,7 @@ export default class VehicleCustomizer extends LightningElement {
 
     //method to retrieve the list of all available makes
     get makeList() {
-        this.logRawData();
+        
         return Object.getOwnPropertyNames(this.makeMap);
     }
 
@@ -237,8 +244,36 @@ export default class VehicleCustomizer extends LightningElement {
     //fired on press of Next button
     submitOrder() {
         this.alertCheck();
-        //TODO either make sure that a color is selected or set a default color
-        //TODO send info to another component
+        
+        if (this.isMakeSelected && this.isModelSelected && this.isYearSelected) {
+
+            let accList = [];
+            for (let x in this.makeMap[this.selectedMake][this.selectedModel][this.selectedYear][this.optionBarStateEnums.Accessories]) {
+                if (this.makeMap[this.selectedMake][this.selectedModel][this.selectedYear][this.optionBarStateEnums.Accessories][x]['Selected'] = true) {
+                    accList.push(this.makeMap[this.selectedMake][this.selectedModel][this.selectedYear][this.optionBarStateEnums.Accessories][x]['RecordId']);
+                }
+            }
+
+            let custList = [];
+            for (let x in this.makeMap[this.selectedMake][this.selectedModel][this.selectedYear][this.optionBarStateEnums.Customizations]) {
+                if (this.makeMap[this.selectedMake][this.selectedModel][this.selectedYear][this.optionBarStateEnums.Customizations][x]['Selected'] = true) {
+                    custList.push(this.makeMap[this.selectedMake][this.selectedModel][this.selectedYear][this.optionBarStateEnums.Customizations][x]['RecordId']);
+                }
+            }
+
+            let selColorId = '';
+            for (let x in this.makeMap[this.selectedMake][this.selectedModel][this.selectedYear][this.optionBarStateEnums.Colors]) {
+                if (this.makeMap[this.selectedMake][this.selectedModel][this.selectedYear][this.optionBarStateEnums.Colors][x]['Selected'] = true) {
+                    selColorId = this.makeMap[this.selectedMake][this.selectedModel][this.selectedYear][this.optionBarStateEnums.Colors][x]['RecordId'];
+                }
+            }
+            submitOrder({prodId: this.makeMap[this.selectedMake][this.selectedModel][this.selectedYear]['Id'], colorId: selColorId, customList: custList, accessoryList: accList}).then({
+
+            }).catch(error => {
+                console.log(error);
+            });
+            this.showSuccessAlert = true;
+        }
     }
 
     //event handler when an option node is clicked

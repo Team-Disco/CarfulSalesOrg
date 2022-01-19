@@ -18,11 +18,7 @@
         </aura:if>
         <aura:if isTrue="{!v.curTab == 'Catalogue'}">
             <c:vehicleCatalogue></c:vehicleCatalogue>
-            <c:data></c:data>
-            <c:detail></c:detail>
-            <c:list></c:list>
             <c:selector></c:selector>
-            <c:tile></c:tile>
         </aura:if>
     </div>
     <div class='footerContainer'>
