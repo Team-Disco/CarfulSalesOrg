@@ -1,7 +1,7 @@
 public class UpdateAccessory {
     //Apex class to add a default price when creating a new accessory
     
-public void addAccessory(List<Accessory__c> newAccessory){
+public static void addAccessory(List<Accessory__c> newAccessory){
     
     Set<ID> accessoryID = new Set<ID>();
     // Assign task created to a list to be updated outside of for loop. 
