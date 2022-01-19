@@ -18,6 +18,22 @@
                         </div>
                     </div>
                 </template>
+                <template if:true={showSuccessAlert}>
+                    <div class="slds-notify slds-notify_alert buttonAlert" role="alert">
+                        <span class="slds-assistive-text">info</span>
+                        <h2 class='alertText'>Your order has been submitted!
+                        </h2>
+                        <div class="slds-notify__close">
+                            <button class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse"
+                                title="Close" onclick={closeAlert}>
+                                <svg class="slds-button__icon" aria-hidden="true">
+                                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                                </svg>
+                                <span class="slds-assistive-text">Close</span>
+                            </button>
+                        </div>
+                    </div>
+                </template>
                 <label><b>Make: </b></label>
                 <select name='Makes' class='makeSelect' onchange={updateModels}>
                     <option value='' disabled selected>Select Vehicle Make</option>

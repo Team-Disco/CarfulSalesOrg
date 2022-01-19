@@ -18,6 +18,10 @@
                 {
                     "package": "CarfulApp",
                     "versionNumber": "0.1.0.LATEST"
+                },
+                {
+                    "package": "CarfulNicholasVB",
+                    "versionNumber": "0.1.0.LATEST"
                 }
             ]
         },
@@ -66,8 +70,21 @@
                     "versionNumber": "0.1.0.2"
                 },
                 {
-                    "package": "CarfulNicholas",
+                    "package": "CarfulNicholasVB",
                     "versionNumber": "0.1.0.LATEST"
+                }
+            ]
+        },
+        {
+            "path": "CarfulNicholasVB",
+            "package": "CarfulNicholasVB",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT",
+            "default": false,
+            "dependencies": [
+                {
+                    "package": "CarfulMetaData",
+                    "versionNumber": "0.1.0.2"
                 }
             ]
         }
@@ -128,6 +145,52 @@
         "CarfulNicholas@0.1.0-33": "04t5f000000JigrAAC",
         "CarfulApp@0.1.0-5": "04t5f000000JigwAAC",
         "CarfulApp@0.1.0-6": "04t5f000000Jih6AAC",
-        "CarfulApp@0.1.0-7": "04t5f000000JihBAAS"
+        "CarfulApp@0.1.0-7": "04t5f000000JihBAAS",
+        "CarfulApp@0.1.0-8": "04t5f000000JihGAAS",
+        "CarfulNicholas@0.1.0-34": "04t5f000000JihLAAS",
+        "CarfulNicholas@0.1.0-35": "04t5f000000JihQAAS",
+        "CarfulWeb@0.1.0-6": "04t5f000000JihVAAS",
+        "CarfulNicholas@0.1.0-36": "04t5f000000JihaAAC",
+        "CarfulWeb@0.1.0-7": "04t5f000000JihfAAC",
+        "CarfulWeb@0.1.0-8": "04t5f000000JihkAAC",
+        "CarfulNicholas@0.1.0-37": "04t5f000000JihpAAC",
+        "CarfulNicholas@0.1.0-38": "04t5f000000JihuAAC",
+        "CarfulNicholas@0.1.0-39": "04t5f000000JihzAAC",
+        "CarfulNicholas@0.1.0-40": "04t5f000000Jii4AAC",
+        "CarfulNicholas@0.1.0-41": "04t5f000000Jii9AAC",
+        "CarfulNicholas@0.1.0-42": "04t5f000000JiiEAAS",
+        "CarfulNicholas@0.1.0-43": "04t5f000000JiiJAAS",
+        "CarfulNicholas@0.1.0-44": "04t5f000000JiiOAAS",
+        "CarfulNicholas@0.1.0-45": "04t5f000000JiiTAAS",
+        "CarfulNicholas@0.1.0-46": "04t5f000000JiiYAAS",
+        "CarfulNicholas@0.1.0-47": "04t5f000000Jij7AAC",
+        "CarfulNicholas@0.1.0-48": "04t5f000000Jij8AAC",
+        "CarfulNicholas@0.1.0-49": "04t5f000000JijCAAS",
+        "CarfulNicholas@0.1.0-50": "04t5f000000JijHAAS",
+        "CarfulNicholas@0.1.0-51": "04t5f000000JijMAAS",
+        "CarfulNicholas@0.1.0-52": "04t5f000000JijRAAS",
+        "CarfulNicholas@0.1.0-53": "04t5f000000JijWAAS",
+        "CarfulNicholas@0.1.0-54": "04t5f000000JijbAAC",
+        "CarfulNicholas@0.1.0-55": "04t5f000000JijgAAC",
+        "CarfulNicholas@0.1.0-56": "04t5f000000JijlAAC",
+        "CarfulNicholas@0.1.0-57": "04t5f000000JijqAAC",
+        "CarfulNicholas@0.1.0-58": "04t5f000000JijvAAC",
+        "CarfulNicholas@0.1.0-59": "04t5f000000Jik0AAC",
+        "CarfulNicholas@0.1.0-60": "04t5f000000Jik5AAC",
+        "CarfulNicholas@0.1.0-61": "04t5f000000JikAAAS",
+        "CarfulNicholas@0.1.0-62": "04t5f000000JikFAAS",
+        "CarfulNicholas@0.1.0-63": "04t5f000000JikKAAS",
+        "CarfulNicholas@0.1.0-64": "04t5f000000JikPAAS",
+        "CarfulNicholas@0.1.0-65": "04t5f000000JikUAAS",
+        "CarfulNicholas@0.1.0-66": "04t5f000000JikeAAC",
+        "CarfulNicholasVB": "0Ho5f000000PBKLCA4",
+        "CarfulNicholasVB@0.1.0-1": "04t5f000000JikjAAC",
+        "CarfulNicholasVB@0.1.0-2": "04t5f000000JikoAAC",
+        "CarfulApp@0.1.0-9": "04t5f000000JiktAAC",
+        "CarfulApp@0.1.0-10": "04t5f000000JikyAAC",
+        "CarfulApp@0.1.0-11": "04t5f000000Jil3AAC",
+        "CarfulNicholas@0.1.0-67": "04t5f000000Jil8AAC",
+        "CarfulNicholas@0.1.0-68": "04t5f000000JilDAAS",
+        "CarfulNicholas@0.1.0-69": "04t5f000000JilIAAS"
     }
 }

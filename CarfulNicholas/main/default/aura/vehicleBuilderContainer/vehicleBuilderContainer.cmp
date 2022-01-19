@@ -1,5 +1,9 @@
 <aura:component controller='vehicleBuilderContainerController' implements='forceCommunity:availableForAllPageTypes' access='global'>
     <aura:attribute name='orgData' type='List' access='global'/>
+    <aura:attribute name='dataReceived' type='Boolean' access='global'/>
     <aura:handler name="init" value="{!this}" action="{!c.Initialize}"/>
-    <c:vehicleCustomizer rawVehicleData='{!v.orgData}'></c:vehicleCustomizer>
+    <aura:if isTrue="{!v.dataReceived}">
+        <c:vehicleCustomizer rawVehicleData='{!v.orgData}'></c:vehicleCustomizer>
+    </aura:if>
+    
 </aura:component>

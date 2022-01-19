@@ -1,0 +1,30 @@
+h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+img {
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+}
+
+.mainContainer {
+    display: flex;
+    background-color: #6B6B6B;
+    flex: 1 1 0px;
+}
+
+.socialMediaNodes {
+    display: flex;
+}
+
+.contactInfo {
+    flex: 1 1 0px;
+}

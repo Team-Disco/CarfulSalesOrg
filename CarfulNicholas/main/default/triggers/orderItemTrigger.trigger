@@ -1,6 +1,6 @@
-trigger orderItemTrigger on Order_Item__c (before insert) {
+trigger orderItemTrigger on Order_Item__c (after insert) {
     switch on trigger.operationType {
-        when BEFORE_INSERT {
+        when AFTER_INSERT {
             orderItemTriggerHandler.handleBeforeInsert(trigger.new);
         }
     }

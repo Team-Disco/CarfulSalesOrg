@@ -17,6 +17,8 @@ public with sharing class orderItemTriggerHandler {
         
         //instantiate map with keys and empty string list value
         for (AssociatedBrand__c aBrand: aBrandList) {
+            //TEST
+            System.debug(aBrand.Make__c);
             makeToEmailBodyMap.put(aBrand.Make__c, new List<String>());
         }
 
@@ -30,17 +32,23 @@ public with sharing class orderItemTriggerHandler {
                 '\nYear: ' + ordItem.Product__r.Year__c + 
                 '\n\n'
             );
+            System.debug(makeToEmailBodyMap.get(ordItem.Product__r.Vehicle_Make__c));
         }
-        
+
+        List<Messaging.SingleEmailMessage> mailList = new List<Messaging.SingleEmailMessage>();
 
         //send emails to brands
         for (AssociatedBrand__c aBrand : aBrandList) {
             //skips brand if no cars of the brand are ordered
             if (makeToEmailBodyMap.get(aBrand.Make__c).size() == 0) continue;
 
+            System.debug('reached here');
+
             //setup email to be sent
             Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
-            String[] toAddresses = new String[]{aBrand.Manufacture_Email__c};
+            List<String> toAddresses = new List<String>();
+            //toAddresses.add(aBrand.Manufacture_Email__c);
+            toAddresses.add('nyoon8360@gmail.com');
             mail.setToAddresses(toAddresses);
             mail.setReplyTo('support@carful.com');
             mail.setSenderDisplayName('Carful Order Handling Department');
@@ -54,9 +62,14 @@ public with sharing class orderItemTriggerHandler {
                 buildingString += ordItemString;
             }
             mail.setPlainTextBody(buildingString);
+            
+            mailList.add(mail);
 
             //send email
-            Messaging.sendEmail(new Messaging.SingleEmailMessage[] {mail});
+            
         }
+
+        Messaging.SendEmailResult[] results = Messaging.sendEmail(mailList);
+        
     }
 }
